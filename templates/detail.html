@@ -1,6 +1,10 @@
+<article class="detail">
+
 <h1>{{page_title}}</h1>
 
    <h2>{{post.title.rendered}}</h2>
    <p>{{post.acf.materials}}</p>
    <img ng-src="{{post.acf.main_image}}">
    <div ng-bind-html="post.content.rendered | to_trusted"></div>
+
+</article>

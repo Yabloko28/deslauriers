@@ -46,6 +46,9 @@ function deslauriers_setup() {
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'deslauriers' ),
 	) );
+	register_nav_menus( array(
+		'secondary' => esc_html__( 'Secondary', 'deslauriers' ),
+	) );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -110,33 +113,60 @@ function deslauriers_widgets_init() {
 }
 add_action( 'widgets_init', 'deslauriers_widgets_init' );
 
-/**
- * Enqueue scripts and styles.
- */
-// class wp_ng_theme {
-	
-// 	function enqueue_scripts() {
-		
-// 		wp_enqueue_style( 'bootstrapCSS', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css', array(), '1.0', 'all' );
-// 		wp_enqueue_script( 'angular-core', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js', array( 'jquery' ), '1.0', false );
-// 		wp_enqueue_script('angular-resource', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-resource.js', array('angular-core'), '1.0', false);
-// 		wp_enqueue_script( 'ui-router', 'https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js', array( 'angular-core' ), '1.0', false );
-// 		wp_enqueue_script( 'ngScripts', get_template_directory_uri() . '/js/app.js', array( 'ui-router' ), '1.0', false );
-// 		wp_localize_script( 'ngScripts', 'appInfo',
-// 			array(
-				
-// 				'api_url'			 => rest_get_url_prefix() . '/wp/v2/',
-// 				'template_directory' => get_template_directory_uri() . '/',
-// 				'nonce'				 => wp_create_nonce( 'wp_rest' ),
-// 				'is_admin'			 => current_user_can('administrator')
-				
-// 			)
-// 		);
-		
-// 	}
-	
-// }
+function get_the_subcategory() {
+	$categories = get_the_category();
+    // get the sub category if we have them
+    foreach ($categories as $cat) {
+        $parent = $cat->category_parent;
+        if ($parent != 0 ) {
+            $sub_cat_ID = $cat->cat_ID;
+        }
+    }
+    if (!$sub_cat_ID) {
+        return false;
+    } else {
+        return $sub_cat_ID;
+    }
+} 
 
+function get_next_subcategory_post_link() {
+    $cat_ID = get_the_subcategory();
+    if($cat_ID != false) {
+        $args = array(
+        "category"        => $cat_ID,
+        "orderby"         => "post_date",
+        "order"           => "ASC" );
+        $list = get_posts($args);
+        $current = false;
+        foreach($list as $post) {
+            if($current == true) {
+                return get_permalink($post->ID);
+            }
+            if($post->ID == get_the_ID()) {
+                $current = true;
+            }
+        }
+    }
+}
+
+function get_previous_subcategory_post_link() {
+    $cat_ID = get_the_subcategory();
+    $args = array(
+        "numberposts"     => 1000,
+        "category"        => $cat_ID,
+        "orderby"         => "post_date",
+        "order"           => "DESC" );
+        $list = get_posts($args);
+        $current = false;
+    foreach($list as $post) {
+        if($current == true) {
+            return get_permalink($post->ID);
+        }
+        if($post->ID == get_the_ID()) {
+            $current = true;
+        }
+    } 
+}
 function deslauriers_scripts() {
 		wp_enqueue_style( 'bootstrapCSS', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css', array(), '1.0', 'all' );
 		wp_enqueue_script( 'angular-core', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js', array( 'jquery' ), '1.0', false );

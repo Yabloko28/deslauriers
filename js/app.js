@@ -7,12 +7,30 @@ wpApp.factory('Posts', function($q, $resource) {
 	});
 });
 
-wpApp.controller('ListCtrl', ['$scope', 'Posts', function($scope, Posts) {
-	console.log('ListCtrl');
-	$scope.page_title = 'Blog Listing';
+wpApp.factory('Pages', function($q, $resource) {
+	return $resource(appInfo.api_url + 'pages/')
+});
+
+wpApp.controller('WelcomeCtrl', ['$scope', 'Posts', function($scope, Posts) {
+	console.log('WelcomeCtrl');
 	Posts.query(function(res) {
 		$scope.posts = res;
-		return res;
+		console.log(res);
+	});
+}])
+
+wpApp.controller('WorksCtrl', ['$scope', 'Posts', function($scope, Posts) {
+	console.log('WorksCtrl');
+	Posts.query(function(res) {
+		$scope.posts = res;
+	});
+}])
+
+wpApp.controller('PageCtrl', ['$scope', 'Pages', function($scope, Pages) {
+	console.log('PageCtrl');
+	Pages.query(function(res) {
+		$scope.pages = res;
+		console.log(res);
 	});
 }])
 
@@ -27,10 +45,35 @@ wpApp.controller('DetailCtrl', ['$scope', '$stateParams', 'Posts', function($sco
 wpApp.config(function($stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.otherwise('/');
 	$stateProvider
-	        .state('works', {
+	        .state('welcome', {
 	        	url: '/',
-	        	controller: 'ListCtrl',
-	        	templateUrl: appInfo.template_directory + 'templates/posts.html'
+	        	controller: 'WelcomeCtrl',
+	        	templateUrl: appInfo.template_directory + 'templates/welcome.html'
+	        })
+	        .state('paper-works', {
+	        	url: '/paper-works',
+	        	controller: 'WorksCtrl',
+	        	templateUrl: appInfo.template_directory + 'templates/paper.html'
+	        })
+	        .state('video-works', {
+	        	url: '/video-works',
+	        	controller: 'WorksCtrl',
+	        	templateUrl: appInfo.template_directory + 'templates/video.html'
+	        })
+	        .state('performative-works', {
+	        	url: '/performative-works',
+	        	controller: 'WorksCtrl',
+	        	templateUrl: appInfo.template_directory + 'templates/performative.html'
+	        })
+	        .state('cv-bio', {
+	        	url: '/cv-bio',
+	        	controller: 'PageCtrl',
+	        	templateUrl: appInfo.template_directory + 'templates/cv-bio.html'
+	        })
+        	.state('contact', {
+	        	url: '/contact',
+	        	controller: 'PageCtrl',
+	        	templateUrl: appInfo.template_directory + 'templates/contact.html'
 	        })
 	        .state('detail', {
 	        	url: '/posts/:id',

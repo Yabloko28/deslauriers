@@ -15,17 +15,15 @@ get_header(); ?>
 		<?php
 		while ( have_posts() ) : the_post();
 
-			get_template_part( 'template-parts/content', get_post_format() );
-
-			the_post_navigation();
+			get_template_part( 'template-parts/content-slide');
 
 			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
 
 		endwhile; // End of the loop.
 		?>
+		
+<a href="<?php echo get_next_subcategory_post_link( '%link', 'Right', TRUE ); ?>">Previous</a>
+<a href="<?php echo get_previous_subcategory_post_link( '%link', 'Right', TRUE ); ?>">Next</a>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

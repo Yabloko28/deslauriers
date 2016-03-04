@@ -13,24 +13,10 @@
  */
 
 get_header(); ?>
-    <nav>
-    	<ul>
-    		<li>Paper Work</li>
-    		<li>Video Work</li>
-    		<li>Performative Work</li>
-    		<li>CV / Bio</li>
-    		<li>Contact</li>
-    	</ul>
-    </nav>
-	<div ui-view></div>
-	<h1>{{page_title}}</h1>
-
-    <div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-        
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
+<article class="welcome">
+    <img src="http://nadyascreatures.com/images/album_cover_riso.jpg">
+</article>
 <?php
 
 get_footer();
+?>

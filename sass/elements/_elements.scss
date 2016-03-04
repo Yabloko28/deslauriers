@@ -37,6 +37,52 @@ img {
 
 @import "tables";
 
-.site-branding {
-	background-color: rgb(200, 200, 200);
+.site-header {
+	position: fixed;
+	z-index: 2;
+	width: 100%;
+    background-color: rgb(200, 200, 200);
+	.site-branding {
+	    padding: 2em 2em;
+	    .site-title {
+	    	display: inline-block;
+	    	width: 45%;
+	    }
+	    .language-menu {
+		display: inline-block;
+		width: 45%;
+		text-align: right;
+	    }
+    }
+}
+
+.site-content {
+	width: 80%;
+	margin-left: 25em;
+	padding: 12em 5em;
+}
+
+// .entry-content {
+// 	.thumb {
+// 		display: inline-block;
+// 	}
+// }
+
+.paper, .video, .performative {
+	display: inline-block;
+		img {
+		    max-width: 100%;
+	}
+}
+
+.cv-bio, .contact {
+
+}
+
+.detail {
+	position: fixed;
+	z-index: 5;
+	background: rgb(100, 100, 100);
+	width: 100%;
+	min-height: 100%;
 }

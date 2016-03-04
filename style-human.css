@@ -399,8 +399,44 @@ table {
   width: 100%;
 }
 
-.site-branding {
+.site-header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
   background-color: #c8c8c8;
+}
+.site-header .site-branding {
+  padding: 2em 2em;
+}
+.site-header .site-branding .site-title {
+  display: inline-block;
+  width: 45%;
+}
+.site-header .site-branding .language-menu {
+  display: inline-block;
+  width: 45%;
+  text-align: right;
+}
+
+.site-content {
+  width: 80%;
+  margin-left: 25em;
+  padding: 12em 5em;
+}
+
+.paper, .video, .performative {
+  display: inline-block;
+}
+.paper img, .video img, .performative img {
+  max-width: 100%;
+}
+
+.detail {
+  position: fixed;
+  z-index: 5;
+  background: #646464;
+  width: 100%;
+  min-height: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -609,6 +645,17 @@ a:hover, a:active {
   width: 50%;
 }
 
+.main-nav {
+  background: #c8c8c8;
+  width: 25em;
+  height: 100%;
+  position: fixed;
+  padding: 10em 0;
+}
+.main-nav ul {
+  list-style: none;
+}
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -730,12 +777,6 @@ a:hover, a:active {
 .single .byline,
 .group-blog .byline {
   display: inline;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-  margin: 1.5em 0 0;
 }
 
 .page-links {

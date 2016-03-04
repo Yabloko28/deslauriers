@@ -9,39 +9,15 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-			if ( is_single() ) {
-				the_title( '<h1 class="entry-title">', '</h1>' );
-			} else {
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			}
+<!-- <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>> -->
 
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php deslauriers_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-	</header><!-- .entry-header -->
-
-	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'deslauriers' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'deslauriers' ),
-				'after'  => '</div>',
-			) );
-		?>
+	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+   		<a href=" <?php esc_url( get_permalink() ) ?> ">
+<!--    		<?php echo esc_url( get_permalink() ) ?> -->
+			<?php echo '<img src="'. get_field('main_image'). '" />' ?>
+		</a>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php deslauriers_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+<!-- </article> -->
+<!-- #post-## -->
