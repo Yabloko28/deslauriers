@@ -113,6 +113,21 @@ function deslauriers_widgets_init() {
 }
 add_action( 'widgets_init', 'deslauriers_widgets_init' );
 
+function is_subcategory( $cat_id = NULL ) {
+
+        if ( !$cat_id )
+            $cat_id = get_query_var( 'cat' );
+
+        if ( $cat_id ) {
+
+            $cat = get_category( $cat_id );
+            if ( $cat->category_parent > 0 )
+                return true;
+        }
+
+        return false;
+    }
+    
 function get_the_subcategory() {
 	$categories = get_the_category();
     // get the sub category if we have them
