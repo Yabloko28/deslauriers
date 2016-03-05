@@ -27,7 +27,7 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 
-				<h1 class="site-title"><a ui-sref="welcome" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h1 class="site-title"><a href="/" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php
 
 			$description = get_bloginfo( 'description', 'display' );

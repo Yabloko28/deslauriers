@@ -112,7 +112,14 @@ function deslauriers_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'deslauriers_widgets_init' );
+function get_posts_in_category($category) {
 
+    return get_posts(array(
+        'post_status'   => 'publish',
+        'category'      => $category, // e.g '3'  catgory is passed as 'cat' param of WP_Query, so it will display posts from children categories as well
+        'posts_per_page'   => -1
+    ));
+}
 function is_subcategory( $cat_id = NULL ) {
 
         if ( !$cat_id )
@@ -127,7 +134,7 @@ function is_subcategory( $cat_id = NULL ) {
 
         return false;
     }
-    
+
 function get_the_subcategory() {
 	$categories = get_the_category();
     // get the sub category if we have them

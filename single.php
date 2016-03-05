@@ -11,7 +11,14 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
+		<?php
+            $sub = get_the_subcategory('cat');
+            $new_array = get_posts_in_category($sub);
+            $key = array_search(get_post(), $new_array);
+            $length = count(get_posts_in_category($sub));
+        ?>
+		<p> <?php echo ($key + 1);?> of <?php echo count(get_posts_in_category($sub)); ?></p>
+        <a href="<?php echo get_category_link($sub); ?>">Back to <?php echo get_cat_name($sub) ?></a> 
 		<?php
 		while ( have_posts() ) : the_post();
 
@@ -22,10 +29,28 @@ get_header(); ?>
 		endwhile; // End of the loop.
 
 		?>
+<?php 
+    $sub = get_the_subcategory('cat');
+    $sublink = get_category_link($sub);
+
+    ?>
+
+<?php if(($key+1) == 1) {
+    
+} else { ?>
 
 <a href="<?php echo get_next_subcategory_post_link( '%link', 'Right', TRUE ); ?>">Previous</a>
-<a href="<?php echo get_previous_subcategory_post_link( '%link', 'Right', TRUE ); ?>">Next</a>
 
+<?php
+} 
+
+if(($key+1) == $length) {
+    
+} else { ?>
+
+<a href="<?php echo get_previous_subcategory_post_link( '%link', 'Right', TRUE ); ?>">Next</a>
+<?php
+} ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
