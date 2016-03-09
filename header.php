@@ -38,11 +38,12 @@
 
 			<div class="language-menu"><?php get_sidebar(); ?></div>
 		</div><!-- .site-branding -->
-                <nav class="main-nav" >
             <?php if ( has_nav_menu( 'primary' ) ) : ?>
-            <nav id="footer-navigation" class="footer-navigation" role="navigation">
+            <nav id="site-navigation" class="main-navigation" role="navigation">
+                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'artist-website' ); ?></button>
                 <?php wp_nav_menu( array( 
                     'theme_location' => 'primary',
+                    'menu_class'     => 'nav-menu',
                     'menu_id' => 'primary-menu',
                     'depth' => 2
                     ) ); ?>

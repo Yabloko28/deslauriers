@@ -38,11 +38,11 @@ img {
 @import "tables";
 
 .site-header {
-	position: fixed;
-	z-index: 2;
-	width: 100%;
-    background-color: rgb(200, 200, 200);
+	    position: fixed;
+	   	width: 100%;
+	    z-index: 2;
 	.site-branding {
+        background-color: rgb(200, 200, 200);
 	    padding: 2em 2em;
 	    .site-title {
 	    	display: inline-block;
@@ -56,17 +56,28 @@ img {
     }
 }
 
-.site-content {
-	width: 80%;
-	margin-left: 25em;
-	padding: 12em 5em;
+.welcome{
+    text-align: center;
 }
 
-// .entry-content {
-// 	.thumb {
-// 		display: inline-block;
-// 	}
-// }
+.site-content {
+	@include break(60.625em) {
+	width: 80%;
+	margin-left: 25em;
+	padding: 0;
+	padding-top: 15em;
+    }
+    width: 100%;
+}
+.site-main {
+	padding-left: 5em;
+	padding-right: 5em;
+}
+
+.site-footer {
+	margin-left: 25em;
+	padding-left: 5em;
+}
 
 .paper, .video, .performative {
 	display: inline-block;

@@ -27,7 +27,6 @@ get_header(); ?>
 			// If comments are open or we have at least one comment, load up the comment template.
 
 		endwhile; // End of the loop.
-
 		?>
 <?php 
     $sub = get_the_subcategory('cat');
@@ -50,7 +49,11 @@ if(($key+1) == $length) {
 
 <a href="<?php echo get_previous_subcategory_post_link( '%link', 'Right', TRUE ); ?>">Next</a>
 <?php
-} ?>
+} 
+        $materials = get_field( "materials" );
+        $dimensions = get_field( "dimensions" ); ?>
+        <p><?php echo $materials; ?></p>
+        <p><?php echo $dimensions; ?></p>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

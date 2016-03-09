@@ -12,11 +12,17 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 		<?php
-		if ( have_posts() ) : ?>
+		
+		get_query_var('cat');
+        $c = get_query_var('cat');
 
-			<?php
-			get_query_var('cat');
-            $c = get_query_var('cat');
+		if(is_subcategory($c) == 1) { ?>
+			
+			<h2 class="cat-title"><?php single_cat_title(); ?></h2>
+			<div class="cat-description"><?php echo category_description($c); ?></div>
+
+        <?php }
+		if ( have_posts() ) : 
             //     $sub = get_the_subcategory('cat');
             // echo count(get_posts_in_category($sub));
 			/* Start the Loop */
@@ -27,7 +33,11 @@ get_header(); ?>
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', 'get_post_format()' );
+				if (is_category('Video')) {
+					get_template_part( 'template-parts/content-video', 'get_post_format()' );
+				} else {
+ 				    get_template_part( 'template-parts/content', 'get_post_format()' );
+ 				}
 
 			endwhile;
  
