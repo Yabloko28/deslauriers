@@ -137,6 +137,7 @@ function is_subcategory( $cat_id = NULL ) {
 
 function get_the_subcategory() {
 	$categories = get_the_category();
+	$sub_cat_ID = 0;
     // get the sub category if we have them
     foreach ($categories as $cat) {
         $parent = $cat->category_parent;

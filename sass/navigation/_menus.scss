@@ -1,17 +1,7 @@
 .main-navigation {
 	clear: both;
-	// background: rgb(200, 200, 200);
-	width: 100%;
-	position: fixed;
+	height: 100%;
     padding: 0em 0;
-    @include break(60.625em) {
-    	width: 25em;
-		height: 100%;
-    }
- //    @include break(37em, 60.625em) {
- //    	width: 100%;
-	// 	// background: transparent;
-	// }
 	ul {
 	    padding-left: 5%;
 	    padding-right: 5%;
@@ -78,10 +68,6 @@
 
 .menu-main-menu-container {
 	height: 100%;
-	background: rgba(200, 200, 200, 0.3);
-    @include break(60.625em) {
-	    background: rgb(200, 200, 200);
-	}
 	@include break(37em, 60.625em) {
 	    width: 33%;
 	}
@@ -169,4 +155,8 @@
 .dropdown-toggle.toggle-on:after {
 	content: "\f106";
 }
-
+.language-menu {
+	z-index: 5;
+	position: absolute;
+    bottom: 5em;
+}

@@ -27,7 +27,7 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 
-			<h1 class="site-title"><a href="/" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h1 class="site-title"><a href="/" rel="home"><img src="<?php echo get_header_image(); ?>"></a></h1>
 			<?php
 
 			$description = get_bloginfo( 'description', 'display' );
@@ -36,7 +36,6 @@
 			<?php
 			endif; ?>
 
-			<div class="language-menu"><?php get_sidebar(); ?></div>
 		</div><!-- .site-branding -->
             <?php if ( has_nav_menu( 'primary' ) ) : ?>
             <nav id="site-navigation" class="main-navigation" role="navigation">
@@ -49,5 +48,7 @@
                     ) ); ?>
             </nav><!-- #site-navigation -->
             <?php endif; ?>
+
+            <div class="language-menu"><?php get_sidebar(); ?></div>
 	</header><!-- #masthead -->
 	<div id="content" class="container site-content">

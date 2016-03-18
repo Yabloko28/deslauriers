@@ -343,8 +343,13 @@ html {
 }
 
 body {
-  background: #fff;
+  background: white;
   /* Fallback for when there is no custom background color defined. */
+}
+
+body.custom-background {
+  background: white;
+  background-image: none !important;
 }
 
 blockquote, q {
@@ -400,17 +405,26 @@ table {
 }
 
 .site-header {
+  background-color: rgba(200, 200, 200, 0.3);
   position: fixed;
-  width: 100%;
   z-index: 2;
 }
+@media only screen and (min-width: 60.625em) {
+  .site-header {
+    width: 35em;
+    height: 100%;
+  }
+}
 .site-header .site-branding {
-  background-color: #c8c8c8;
   padding: 2em 2em;
+  width: 100%;
 }
 .site-header .site-branding .site-title {
+  margin: 0;
   display: inline-block;
-  width: 45%;
+}
+.site-header .site-branding .site-title img {
+  width: 100%;
 }
 .site-header .site-branding .language-menu {
   display: inline-block;
@@ -427,10 +441,8 @@ table {
 }
 @media only screen and (min-width: 60.625em) {
   .site-content {
-    width: 80%;
-    margin-left: 25em;
     padding: 0;
-    padding-top: 15em;
+    padding-left: 35em;
   }
 }
 
@@ -568,15 +580,8 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 .main-navigation {
   clear: both;
-  width: 100%;
-  position: fixed;
+  height: 100%;
   padding: 0em 0;
-}
-@media only screen and (min-width: 60.625em) {
-  .main-navigation {
-    width: 25em;
-    height: 100%;
-  }
 }
 .main-navigation ul {
   padding-left: 5%;
@@ -642,12 +647,6 @@ a:hover, a:active {
 
 .menu-main-menu-container {
   height: 100%;
-  background: rgba(200, 200, 200, 0.3);
-}
-@media only screen and (min-width: 60.625em) {
-  .menu-main-menu-container {
-    background: #c8c8c8;
-  }
 }
 @media only screen and (min-width: 37em) and (max-width: 60.625em) {
   .menu-main-menu-container {
@@ -721,6 +720,12 @@ a:hover, a:active {
 
 .dropdown-toggle.toggle-on:after {
   content: "\f106";
+}
+
+.language-menu {
+  z-index: 5;
+  position: absolute;
+  bottom: 5em;
 }
 
 /*--------------------------------------------------------------

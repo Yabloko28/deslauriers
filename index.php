@@ -14,7 +14,7 @@
 
 get_header(); ?>
 <article class="welcome">
-    <img src="http://nadyascreatures.com/images/album_cover_riso.jpg">
+    <img src="<?php echo get_background_image(); ?>">
 </article>
 <?php
 

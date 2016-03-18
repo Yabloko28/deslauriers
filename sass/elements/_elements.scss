@@ -9,7 +9,12 @@ html {
 }
 
 body {
-	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+	background: white; /* Fallback for when there is no custom background color defined. */
+}
+
+body.custom-background {
+	background: white;
+	background-image: none !important;
 }
 
 blockquote, q {
@@ -38,15 +43,22 @@ img {
 @import "tables";
 
 .site-header {
+	    background-color: $header-background;
+	    @include break(60.625em) {
+    	    width: $size__site-sidebar;
+    	    height: 100%;
+        }
 	    position: fixed;
-	   	width: 100%;
 	    z-index: 2;
 	.site-branding {
-        background-color: rgb(200, 200, 200);
 	    padding: 2em 2em;
+	    width: 100%;
 	    .site-title {
+	    	margin: 0;
 	    	display: inline-block;
-	    	width: 45%;
+	    	img {
+	    		width: 100%;
+	    	}
 	    }
 	    .language-menu {
 		display: inline-block;
@@ -62,10 +74,8 @@ img {
 
 .site-content {
 	@include break(60.625em) {
-	width: 80%;
-	margin-left: 25em;
 	padding: 0;
-	padding-top: 15em;
+	padding-left: $size__site-sidebar;
     }
     width: 100%;
 }
