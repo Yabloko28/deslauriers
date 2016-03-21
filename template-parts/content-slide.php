@@ -9,6 +9,6 @@
 
 <?php the_title( '<h1 class="entry-title">', '</h1>' )?>
 
-<img src="<?php echo get_field('main_image'); ?>" />
+<?php the_content(); ?>
 
 </article><!-- #post-## -->

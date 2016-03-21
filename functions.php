@@ -190,6 +190,16 @@ function get_previous_subcategory_post_link() {
         }
     } 
 }
+
+function number_of_posts_on_archive($query){
+    if ($query->is_archive) {
+            $query->set('posts_per_page', 100);
+   }
+    return $query;
+}
+ 
+add_filter('pre_get_posts', 'number_of_posts_on_archive');
+
 function deslauriers_scripts() {
 	function textdomain_load_jquery() {
 
