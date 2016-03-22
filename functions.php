@@ -213,7 +213,7 @@ add_action( 'wp_enqueue_script', 'textdomain_load_jquery' );
 		// wp_enqueue_script( 'angular-core', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js', array( 'jquery' ), '1.0', false );
 		// wp_enqueue_script('angular-resource', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-resource.js', array('angular-core'), '1.0', false);
 		// wp_enqueue_script( 'ui-router', 'https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js', array( 'angular-core' ), '1.0', false );
-		// wp_enqueue_script( 'ngScripts', get_template_directory_uri() . '/js/app.js', array( 'ui-router' ), '1.0', false );
+		wp_enqueue_script( 'functionality', get_template_directory_uri() . '/js/app.js', array( 'jquery' ), '1.0', false );
 		// wp_localize_script( 'ngScripts', 'appInfo',
 		// 	array(
 				

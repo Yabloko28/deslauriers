@@ -9,6 +9,7 @@ html {
 }
 
 body {
+	width: 100vw;
 	background: white; /* Fallback for when there is no custom background color defined. */
 }
 
@@ -43,30 +44,79 @@ img {
 @import "tables";
 
 .site-header {
-	    background-color: $header-background;
+	width: 100vw;
+	background: rgb(255,255,255);
+	// text-align: center;
+	@include break(0em, 60.625em) {
+		height: 8em;
+	}
 	    @include break(60.625em) {
+	    	background-color: $header-background;
     	    width: $size__site-sidebar;
     	    height: 100%;
         }
 	    position: fixed;
 	    z-index: 2;
 	.site-branding {
-	    padding: 2em 2em;
-	    width: 100%;
+	    padding: 1em 2em;
+	    display: inline-block;
+	    height: 8em;
+	    @include break(60.625em) {
+	        padding: 2em 2em;
+	    }
 	    .site-title {
 	    	margin: 0;
-	    	display: inline-block;
+	    	@include break(0em, 60.625em) {
+	    	    display: inline-block;
+	    	}
 	    	img {
-	    		width: 100%;
+	    		height: 2.9em;
 	    	}
 	    }
-	    .language-menu {
+	}
+	nav {
+		@include break(0em, 60.625em) {
+		    display: inline-block;
+		    .menu-toggle {
+		    	margin-right: auto;
+		    	margin-left: auto;
+		    }
+		    .menu-main-menu-container {
+		    	width: 100vw;
+		    	text-align: left;
+		    	position: fixed;
+		    	top: 12.5em;
+		    	right: 0;
+		    	background: rgb(200,200,200);
+		    }
+		    .menu-main-menu-container > ul {
+		    		width: 100%;
+		    		margin-top: 0;
+		    	}
+		}
+	}
+}
+
+   .language-menu {
 		display: inline-block;
 		width: 45%;
-		text-align: right;
+		
+		// position: relative;
+		@include break(0em, 60.625em) {
+			width: 100vw;
+			position: fixed;
+			text-align: right;
+			bottom: 0;
+			right: 0;
+			background: white;
+			display: inline-block;
+			text-align: left;
+			section {
+				display: inline-block;
+			}
+
 	    }
     }
-}
 
 .welcome{
     text-align: center;
@@ -82,11 +132,19 @@ img {
 .site-main {
 	padding-left: 5em;
 	padding-right: 5em;
+	@include break(0em, 30em) {
+		padding: 0;
+		margin-top: 8em;
+		width: 90%;
+	}
 }
 
 .site-footer {
-	margin-left: 25em;
-	padding-left: 5em;
+	margin-bottom: 7em;
+	@include break(60.625em) {
+	    margin-left: 25em;
+	    padding-left: 5em;
+    }
 }
 
 .paper, .video, .performative {

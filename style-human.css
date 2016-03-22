@@ -343,6 +343,7 @@ html {
 }
 
 body {
+  width: 100vw;
   background: white;
   /* Fallback for when there is no custom background color defined. */
 }
@@ -405,31 +406,84 @@ table {
 }
 
 .site-header {
-  background-color: rgba(200, 200, 200, 0.3);
+  width: 100vw;
+  background: white;
   position: fixed;
   z-index: 2;
 }
+@media only screen and (min-width: 0em) and (max-width: 60.625em) {
+  .site-header {
+    height: 8em;
+  }
+}
 @media only screen and (min-width: 60.625em) {
   .site-header {
+    background-color: rgba(200, 200, 200, 0.3);
     width: 35em;
     height: 100%;
   }
 }
 .site-header .site-branding {
-  padding: 2em 2em;
-  width: 100%;
+  padding: 1em 2em;
+  display: inline-block;
+  height: 8em;
+}
+@media only screen and (min-width: 60.625em) {
+  .site-header .site-branding {
+    padding: 2em 2em;
+  }
 }
 .site-header .site-branding .site-title {
   margin: 0;
-  display: inline-block;
+}
+@media only screen and (min-width: 0em) and (max-width: 60.625em) {
+  .site-header .site-branding .site-title {
+    display: inline-block;
+  }
 }
 .site-header .site-branding .site-title img {
-  width: 100%;
+  height: 2.9em;
 }
-.site-header .site-branding .language-menu {
+@media only screen and (min-width: 0em) and (max-width: 60.625em) {
+  .site-header nav {
+    display: inline-block;
+  }
+  .site-header nav .menu-toggle {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .site-header nav .menu-main-menu-container {
+    width: 100vw;
+    text-align: left;
+    position: fixed;
+    top: 12.5em;
+    right: 0;
+    background: #c8c8c8;
+  }
+  .site-header nav .menu-main-menu-container > ul {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+.language-menu {
   display: inline-block;
   width: 45%;
-  text-align: right;
+}
+@media only screen and (min-width: 0em) and (max-width: 60.625em) {
+  .language-menu {
+    width: 100vw;
+    position: fixed;
+    text-align: right;
+    bottom: 0;
+    right: 0;
+    background: white;
+    display: inline-block;
+    text-align: left;
+  }
+  .language-menu section {
+    display: inline-block;
+  }
 }
 
 .welcome {
@@ -450,10 +504,22 @@ table {
   padding-left: 5em;
   padding-right: 5em;
 }
+@media only screen and (min-width: 0em) and (max-width: 30em) {
+  .site-main {
+    padding: 0;
+    margin-top: 8em;
+    width: 90%;
+  }
+}
 
 .site-footer {
-  margin-left: 25em;
-  padding-left: 5em;
+  margin-bottom: 7em;
+}
+@media only screen and (min-width: 60.625em) {
+  .site-footer {
+    margin-left: 25em;
+    padding-left: 5em;
+  }
 }
 
 .paper, .video, .performative {
@@ -580,7 +646,6 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 .main-navigation {
   clear: both;
-  height: 100%;
   padding: 0em 0;
 }
 .main-navigation ul {
@@ -589,6 +654,14 @@ a:hover, a:active {
   display: none;
   list-style: none;
   margin: 0;
+}
+@media only screen and (min-width: 0) and (max-width: 60.625em) {
+  .main-navigation {
+    position: fixed;
+    z-index: 10;
+    right: 3em;
+    margin: 2em 0;
+  }
 }
 
 /* Small menu. */
@@ -645,8 +718,10 @@ a:hover, a:active {
   margin-left: 0.8em;
 }
 
-.menu-main-menu-container {
-  height: 100%;
+@media only screen and (min-width: 60.625em) {
+  .menu-main-menu-container {
+    height: 100%;
+  }
 }
 @media only screen and (min-width: 37em) and (max-width: 60.625em) {
   .menu-main-menu-container {
@@ -694,6 +769,7 @@ a:hover, a:active {
 }
 
 .dropdown-toggle {
+  width: 100%;
   font-family: 'FontAwesome';
   background-color: transparent;
   border: 0;
@@ -706,6 +782,7 @@ a:hover, a:active {
   /* Stop screen readers to read the text as capital letters */
   top: 3px;
   right: 0;
+  text-align: right;
 }
 
 .dropdown-toggle:after {
@@ -724,8 +801,13 @@ a:hover, a:active {
 
 .language-menu {
   z-index: 5;
-  position: absolute;
-  bottom: 5em;
+  width: 100vw;
+}
+@media only screen and (min-width: 0) and (max-width: 60.625em) {
+  .language-menu section {
+    margin: 0;
+    padding: 1em;
+  }
 }
 
 /*--------------------------------------------------------------
