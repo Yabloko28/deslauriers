@@ -214,7 +214,7 @@
 		}
 		@include break(0, 60.625em) {
 			padding: 0.5em 2em;
-		    background-image: linear-gradient(-180deg, #d4f7dc 0%, $header-background 100%);
+		    background-image: linear-gradient(-180deg, $menu-background 0%, $header-background 100%);
 		    .widget {
 		    	width: 50%;
 		    	padding: 0.5em 0;

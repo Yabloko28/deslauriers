@@ -433,9 +433,19 @@ table {
   width: 100%;
 }
 
+.video {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 2em;
+  width: 100%;
+}
+.video p {
+  text-align: center;
+}
+
 .site-header {
   width: 100vw;
-  background-image: linear-gradient(-180deg, rgba(240, 212, 223, 0.5) 0%, #d4f7dc 100%);
+  background-image: linear-gradient(-180deg, rgba(250, 161, 157, 0.5) 0%, #f2d7e7 100%);
   position: fixed;
   top: 0;
   z-index: 2;
@@ -510,7 +520,7 @@ table {
     position: fixed;
     top: 8em;
     right: 0;
-    background: #d4f7dc;
+    background: #f2d7e7;
   }
 }
 @media only screen and (min-width: 0em) and (max-width: 60.625em) and (min-width: 0) and (max-width: 30em) {
@@ -533,13 +543,6 @@ table {
 }
 
 ​
-.video {
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 2em;
-  width: 100%;
-}
-
 a.next-image {
   text-decoration: none;
 }
@@ -801,6 +804,7 @@ article.hentry {
 }
 
 .site-footer {
+  font-size: 0.65em;
   margin-bottom: 7em;
   text-align: center;
 }
@@ -821,6 +825,10 @@ article.hentry {
     margin-top: 5em;
     margin-bottom: 4em;
   }
+}
+.site-footer a {
+  text-decoration: none;
+  font-weight: 700;
 }
 
 .cat-description {
@@ -1211,7 +1219,7 @@ a:hover, a:active {
 @media only screen and (min-width: 0) and (max-width: 60.625em) {
   .language-menu {
     padding: 0.5em 2em;
-    background-image: linear-gradient(-180deg, #d4f7dc 0%, rgba(240, 212, 223, 0.5) 100%);
+    background-image: linear-gradient(-180deg, #f2d7e7 0%, rgba(250, 161, 157, 0.5) 100%);
   }
   .language-menu .widget {
     width: 50%;

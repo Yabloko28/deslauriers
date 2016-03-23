@@ -12,11 +12,9 @@
 ?>
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'deslauriers' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'deslauriers' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'deslauriers' ), 'deslauriers', '<a href="http://nadyascreatures.com/" rel="designer">Nadya Eidelstein</a>' ); ?>
-		</div><!-- .site-info -->
+		<p class="site-info">
+			&copy; 2016 Maude Deslauriers. Site by <a href="http://nadyascreatures.com">Nadya Eidelstein.</a>
+		</p><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
