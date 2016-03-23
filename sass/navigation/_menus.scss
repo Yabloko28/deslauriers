@@ -3,7 +3,7 @@
     padding: 2em 2em;
     font-family: 'Cutive', serif;
     .menu-item {
-    	cursor: hand;
+    	cursor: pointer;
     }
 	ul {
 		padding: 0em 1em;
@@ -197,4 +197,79 @@
 .dropdown-toggle.toggle-on:after {
 	color: $color__link-hover;
 	content: "\f106";
+}
+
+/*------------------Secondary menu----------------*/
+.language-menu {
+   	    z-index: 5;
+   	    padding: 2em 2em;
+   	    text-align: center;
+		display: inline-block;
+		.qtranxs_widget {
+			margin-top: 3em;
+			.lang-en {
+				padding-right: 0.8em;
+		    	border-right: 1px $color__text-main solid;
+		   	}
+		}
+		@include break(0, 60.625em) {
+			padding: 0.5em 2em;
+		    background-image: linear-gradient(-180deg, #d4f7dc 0%, $header-background 100%);
+		    .widget {
+		    	width: 50%;
+		    	padding: 0.5em 0;
+		    	@include break(30em, 60.625em) {
+		    		padding: 0.5em 2em;
+		    	}
+		    	@include break(30em, 35em) {
+		    		padding: 0.5em 1em;
+		    	}
+		    }
+		    .qtranxs_widget {
+		    	margin-top: 0;
+		    	text-align: right;
+		    	width: 40%;
+		    }
+		}
+		@include break(0, 30em) {
+			padding: 0em;
+			text-align: center;
+		    .qtranxs_widget {
+			    margin-left: 1.5em;
+		    }
+	    }
+		.textwidget div a {
+			width: 4em;
+            margin-left: 3em;
+            @include break(0, 30em) {
+             	margin-left: 1.5em;
+             	padding: 0;
+            }
+		}
+		.textwidget div a:first-child {
+            margin-left: 0;
+            @include break(0, 30em) {
+            	margin-left: 1em;
+            }
+		}
+		@include break(60.625em) {
+		    width: $size__site-sidebar;
+		}
+		@include break(0, 60.625em) {
+			section {
+		        margin: 0;
+			    padding: 1em;
+		    }
+			width: 100%;
+			position: fixed;
+			text-align: right;
+			bottom: 0;
+			right: 0;
+			display: inline-block;
+			text-align: left;
+			section {
+				display: inline-block;
+			}
+
+	    }
 }

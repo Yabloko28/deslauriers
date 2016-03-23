@@ -119,6 +119,28 @@ function initMainNavigation( container ) {
 ( function( $ ) {
 	$("li.menu-item-has-children").children('a').removeAttr("href");
     $(window).load(function() {
+    	$('#menu-item-35 > .dropdown-toggle').mouseenter(function() {	
+    		$('#menu-item-35 > a').fadeTo(250, 0.25);
+    		$('#menu-item-35 > .dropdown-toggle').fadeTo(250, 0.25);
+    	})
+    	$('#menu-item-35 > .dropdown-toggle').mouseleave(function() {	
+    		$('#menu-item-35 > a').fadeTo(250, 1);
+    		$('#menu-item-35 > .dropdown-toggle').fadeTo(250, 1);
+    	})
+    	$('#menu-item-34 > .dropdown-toggle').mouseenter(function() {	
+    		$('#menu-item-34 > a').fadeTo(250, 0.25);
+    		$('#menu-item-34 > .dropdown-toggle').fadeTo(250, 0.25);
+    	})
+    	$('#menu-item-34 > .dropdown-toggle').mouseleave(function() {	
+    		$('#menu-item-34 > a').fadeTo(250, 1);
+    		$('#menu-item-34 > .dropdown-toggle').fadeTo(250, 1);
+    	})
+    	// $('.dropdown-toggle').mouseleave(function() {
+    	//     $('#menu-item-35').animate({
+     //            opacity: 1
+     //        }, 250;
+     //        })  
+    // })
       // Masonry Trigger
       var $container = $('.grid');
       console.log('w');

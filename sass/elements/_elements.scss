@@ -140,80 +140,13 @@ ul {
 		}
 	}
 }
+.menu-item a:hover {
+    opacity: 0.5;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+}​
 
-   .language-menu {
-   	    z-index: 5;
-   	    padding: 2em 2em;
-   	    text-align: center;
-		display: inline-block;
-		.qtranxs_widget {
-			margin-top: 3em;
-				.lang-en {
-					padding-right: 0.8em;
-		    		border-right: 1px $color__text-main solid;
-		    	}
-		}
-		@include break(0, 60.625em) {
-			padding: 0.5em 2em;
-		    background-image: linear-gradient(-180deg, #d4f7dc 0%, $header-background 100%);
-		    .widget {
-		    	width: 50%;
-		    	padding: 0.5em 0;
-		    	@include break(30em, 60.625em) {
-		    		padding: 0.5em 2em;
-		    	}
-		    	@include break(30em, 35em) {
-		    		padding: 0.5em 1em;
-		    	}
-		    }
-		    .qtranxs_widget {
-		    	margin-top: 0;
-		    	text-align: right;
-		    	width: 40%;
-		    }
-		}
-		@include break(0, 30em) {
-			padding: 0em;
-			text-align: center;
-		.qtranxs_widget {
-			margin-left: 1.5em;
-		}
-	}
-		.textwidget div a {
-			width: 4em;
-             margin-left: 3em;
-             @include break(0, 30em) {
-             	margin-left: 1.5em;
-             	padding: 0;
-             }
-		}
-		.textwidget div a:first-child {
-             margin-left: 0;
-             @include break(0, 30em) {
-             	margin-left: 1em;
-             }
-		}
-		@include break(60.625em) {
-		width: $size__site-sidebar;
-		}
-		@include break(0, 60.625em) {
-			section {
-			margin: 0;
-			padding: 1em;
-		}
-			width: 100%;
-			position: fixed;
-			text-align: right;
-			bottom: 0;
-			right: 0;
-			display: inline-block;
-			text-align: left;
-			section {
-				display: inline-block;
-			}
-
-	    }
-    }
 .video {
 	margin-right: auto;
 	margin-left: auto;
@@ -264,8 +197,19 @@ a.next-image {
     right: 0;
     bottom:10vh;
     width: 20%;
-    @include break(0, 60.625em) {
+    @include break(30em, 60.625em) {
     	width: 30%;
+    }
+    @include break(0, 30em) {
+    	width: 100%;
+    	position: relative;
+        bottom: 0;
+        text-align: center;
+        img {
+        	width: 60%;
+        	margin-right: auto;
+        	margin-left: auto;
+        }
     }
 }
 article.hentry {
@@ -389,16 +333,13 @@ article.hentry {
 			margin-bottom: 0.5em;
 
 		}
+	}
+	@include break(0em, 30em) {
 		padding: 0;
-		// margin: 0;
-
-		width: 90%;
+		width: 100%;
 		margin-left: auto;
 		margin-right: auto;
 	}
-		// margin-left: auto;
-		// margin-right: auto;
-		// width: 90%;
 }
 .grid {
 	text-align: center;
@@ -446,6 +387,9 @@ article.hentry {
 
 .cat-description {
 	width: 90%;
+	@include break(0, 30em) {
+		width: 100%;
+	}
 	@include break(76.25em) {
          width: 80%;
 	}
@@ -463,14 +407,13 @@ article.hentry {
 
 .back-to, .count {
 	display: inline-block;
-	width: 49%;
     font-family: 'Cutive', serif;
 }
 .back-to {
+	width: 70%;
 	padding-left: 2em;
 	@include break(0, 30em) {
 		padding-left: 0;
-		width: 70%;
 	}
 	a {
 		text-decoration: none;
@@ -483,9 +426,9 @@ article.hentry {
 .count {
 	padding-right: 2em;
 	text-align: right;
+    width: 28%;
 	@include break(0, 30em) {
 		padding-right: 0;
-		width: 28%;
 	}
 }
 p.count {
