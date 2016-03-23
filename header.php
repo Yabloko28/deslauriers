@@ -39,7 +39,7 @@
 		</div><!-- .site-branding -->
             <?php if ( has_nav_menu( 'primary' ) ) : ?>
             <nav id="site-navigation" class="main-navigation" role="navigation">
-                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'artist-website' ); ?></button>
+                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( '', 'artist-website' ); ?></button>
                 <?php wp_nav_menu( array( 
                     'theme_location' => 'primary',
                     'menu_class'     => 'nav-menu',

@@ -115,3 +115,17 @@ function initMainNavigation( container ) {
 		}
 	});
 	} )( jQuery );
+
+( function( $ ) {
+	$("li.menu-item-has-children").children('a').removeAttr("href");
+    $(window).load(function() {
+      // Masonry Trigger
+      var $container = $('.grid');
+      console.log('w');
+      $container.masonry({
+         // options
+         itemSelector: '.grid-item' 
+      });
+
+    });
+}) (jQuery);

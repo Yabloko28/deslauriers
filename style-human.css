@@ -269,8 +269,7 @@ button,
 input,
 select,
 textarea {
-  color: #404040;
-  font-family: sans-serif;
+  color: #443e0d;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
@@ -278,6 +277,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
+  font-family: 'Cutive', serif;
 }
 
 p {
@@ -346,6 +346,8 @@ body {
   width: 100vw;
   background: white;
   /* Fallback for when there is no custom background color defined. */
+  font-family: 'Domine', serif;
+  font-size: 1.25em;
 }
 
 body.custom-background {
@@ -358,6 +360,11 @@ blockquote, q {
 }
 blockquote:before, blockquote:after, q:before, q:after {
   content: "";
+}
+
+span {
+  text-decoration: none;
+  display: inline-block;
 }
 
 hr {
@@ -400,6 +407,26 @@ img {
   /* Adhere to container width. */
 }
 
+p {
+  font-size: 1.25em;
+  font-weight: 400;
+}
+
+ul {
+  padding: 0;
+  list-style-type: circle;
+}
+
+.fa {
+  padding-right: 1em;
+  color: #bc1565;
+}
+
+.fa-bars {
+  padding-right: 0;
+  height: 2em;
+}
+
 table {
   margin: 0 0 1.5em;
   width: 100%;
@@ -407,30 +434,47 @@ table {
 
 .site-header {
   width: 100vw;
-  background: white;
+  background-image: linear-gradient(-180deg, rgba(240, 212, 223, 0.5) 0%, #d4f7dc 100%);
   position: fixed;
+  top: 0;
   z-index: 2;
 }
-@media only screen and (min-width: 0em) and (max-width: 60.625em) {
+@media only screen and (min-width: 0) and (max-width: 30em) {
+  .site-header {
+    height: 6.5em;
+  }
+}
+@media only screen and (min-width: 30em) and (max-width: 60.625em) {
   .site-header {
     height: 8em;
   }
 }
 @media only screen and (min-width: 60.625em) {
   .site-header {
-    background-color: rgba(200, 200, 200, 0.3);
-    width: 35em;
+    width: 30em;
     height: 100%;
   }
 }
 .site-header .site-branding {
-  padding: 1em 2em;
   display: inline-block;
-  height: 8em;
+}
+@media only screen and (min-width: 0) and (max-width: 30em) {
+  .site-header .site-branding {
+    height: 6em;
+    padding: 1em 1em;
+    max-width: 70%;
+  }
+}
+@media only screen and (min-width: 30em) and (max-width: 60.625em) {
+  .site-header .site-branding {
+    height: 8em;
+    padding: 1em 4em;
+  }
 }
 @media only screen and (min-width: 60.625em) {
   .site-header .site-branding {
-    padding: 2em 2em;
+    padding: 2em 3em;
+    width: 100%;
   }
 }
 .site-header .site-branding .site-title {
@@ -441,8 +485,15 @@ table {
     display: inline-block;
   }
 }
-.site-header .site-branding .site-title img {
-  height: 2.9em;
+@media only screen and (min-width: 30em) and (max-width: 60.625em) {
+  .site-header .site-branding .site-title img {
+    height: 2.9em;
+  }
+}
+@media only screen and (min-width: 0) and (max-width: 30em) {
+  .site-header .site-branding .site-title img {
+    height: 2.2em;
+  }
 }
 @media only screen and (min-width: 0em) and (max-width: 60.625em) {
   .site-header nav {
@@ -456,10 +507,17 @@ table {
     width: 100vw;
     text-align: left;
     position: fixed;
-    top: 12.5em;
+    top: 8em;
     right: 0;
-    background: #c8c8c8;
+    background: #d4f7dc;
   }
+}
+@media only screen and (min-width: 0em) and (max-width: 60.625em) and (min-width: 0) and (max-width: 30em) {
+  .site-header nav .menu-main-menu-container {
+    top: 6em;
+  }
+}
+@media only screen and (min-width: 0em) and (max-width: 60.625em) {
   .site-header nav .menu-main-menu-container > ul {
     width: 100%;
     margin-top: 0;
@@ -467,27 +525,257 @@ table {
 }
 
 .language-menu {
+  z-index: 5;
+  padding: 2em 2em;
+  text-align: center;
   display: inline-block;
-  width: 45%;
 }
-@media only screen and (min-width: 0em) and (max-width: 60.625em) {
+.language-menu .qtranxs_widget {
+  margin-top: 3em;
+}
+.language-menu .qtranxs_widget .lang-en {
+  padding-right: 0.8em;
+  border-right: 1px #443e0d solid;
+}
+@media only screen and (min-width: 0) and (max-width: 60.625em) {
   .language-menu {
-    width: 100vw;
+    padding: 0.5em 2em;
+    background-image: linear-gradient(-180deg, #d4f7dc 0%, rgba(240, 212, 223, 0.5) 100%);
+  }
+  .language-menu .widget {
+    width: 50%;
+    padding: 0.5em 0;
+  }
+}
+@media only screen and (min-width: 0) and (max-width: 60.625em) and (min-width: 30em) and (max-width: 60.625em) {
+  .language-menu .widget {
+    padding: 0.5em 2em;
+  }
+}
+@media only screen and (min-width: 0) and (max-width: 60.625em) and (min-width: 30em) and (max-width: 35em) {
+  .language-menu .widget {
+    padding: 0.5em 1em;
+  }
+}
+@media only screen and (min-width: 0) and (max-width: 60.625em) {
+  .language-menu .qtranxs_widget {
+    margin-top: 0;
+    text-align: right;
+    width: 40%;
+  }
+}
+@media only screen and (min-width: 0) and (max-width: 30em) {
+  .language-menu {
+    padding: 0em;
+    text-align: center;
+  }
+  .language-menu .qtranxs_widget {
+    margin-left: 1.5em;
+  }
+}
+.language-menu .textwidget div a {
+  width: 4em;
+  margin-left: 3em;
+}
+@media only screen and (min-width: 0) and (max-width: 30em) {
+  .language-menu .textwidget div a {
+    margin-left: 1.5em;
+    padding: 0;
+  }
+}
+.language-menu .textwidget div a:first-child {
+  margin-left: 0;
+}
+@media only screen and (min-width: 0) and (max-width: 30em) {
+  .language-menu .textwidget div a:first-child {
+    margin-left: 1em;
+  }
+}
+@media only screen and (min-width: 60.625em) {
+  .language-menu {
+    width: 30em;
+  }
+}
+@media only screen and (min-width: 0) and (max-width: 60.625em) {
+  .language-menu {
+    width: 100%;
     position: fixed;
     text-align: right;
     bottom: 0;
     right: 0;
-    background: white;
     display: inline-block;
     text-align: left;
+  }
+  .language-menu section {
+    margin: 0;
+    padding: 1em;
   }
   .language-menu section {
     display: inline-block;
   }
 }
 
+.video {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 2em;
+  width: 100%;
+}
+
+a.next-image {
+  text-decoration: none;
+}
+
+.bio {
+  margin-top: 2em;
+}
+@media only screen and (min-width: 0) and (max-width: 60.625em) {
+  .bio {
+    margin-top: 0;
+  }
+}
+
+.bio, .bio2 {
+  width: 70%;
+  font-size: 1.25em;
+  margin-bottom: 1em;
+}
+@media only screen and (min-width: 0) and (max-width: 30em) {
+  .bio, .bio2 {
+    width: 100%;
+  }
+}
+
+.cv {
+  width: 70%;
+  margin-top: 4em;
+}
+@media only screen and (min-width: 0) and (max-width: 30em) {
+  .cv {
+    width: 100%;
+  }
+}
+.cv h2 {
+  font-size: 1.45em;
+  border-bottom: 1px #443e0d solid;
+}
+.cv h3 {
+  margin-top: 2.5em;
+  margin-bottom: 1.25em;
+  font-size: 1.25em;
+}
+.cv ul {
+  font-size: 1.10em;
+}
+.cv ul li {
+  margin-bottom: 1em;
+}
+
+.bio-image {
+  position: fixed;
+  right: 0;
+  bottom: 10vh;
+  width: 20%;
+}
+@media only screen and (min-width: 0) and (max-width: 60.625em) {
+  .bio-image {
+    width: 30%;
+  }
+}
+
+article.hentry {
+  margin-bottom: 0 !important;
+}
+
+.post {
+  text-align: center;
+}
+.post h2.entry-title {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+.post img {
+  height: auto;
+  width: 100%;
+}
+@media only screen and (min-width: 60.625em) {
+  .post img {
+    height: 100vh;
+    width: auto;
+  }
+}
+
+.previous, .next {
+  position: absolute;
+  top: 55vh;
+  width: 2.5em;
+}
+@media only screen and (min-width: 0) and (max-width: 30em) {
+  .previous, .next {
+    width: 1.5em;
+  }
+}
+.previous .hover, .next .hover {
+  display: none;
+}
+
+.previous:hover .static {
+  display: none;
+}
+.previous:hover .hover {
+  display: block;
+}
+
+.next:hover .static {
+  display: none;
+}
+.next:hover .hover {
+  display: block;
+}
+
+.previous {
+  left: 32em;
+}
+@media only screen and (min-width: 0) and (max-width: 60.625em) {
+  .previous {
+    left: 0.5em;
+  }
+}
+
+.next {
+  right: 2em;
+}
+@media only screen and (min-width: 0) and (max-width: 60.625em) {
+  .next {
+    right: 0.5em;
+  }
+}
+
+.materials, .dimensions, .year {
+  text-align: center;
+  margin-bottom: 0.2em;
+}
+
 .welcome {
   text-align: center;
+}
+.welcome img {
+  height: 90vh;
+  width: auto;
+}
+@media only screen and (min-width: 30em) and (max-width: 60.625em) {
+  .welcome img {
+    margin-top: 8em;
+    width: 100%;
+    height: auto;
+  }
+}
+@media only screen and (min-width: 0em) and (max-width: 30em) {
+  .welcome img {
+    margin-top: 5em;
+    width: 100%;
+    height: auto;
+  }
 }
 
 .site-content {
@@ -496,37 +784,121 @@ table {
 @media only screen and (min-width: 60.625em) {
   .site-content {
     padding: 0;
-    padding-left: 35em;
+    padding-left: 30em;
+  }
+  .site-content .content-area {
+    margin-top: 0;
+  }
+}
+@media only screen and (min-width: 30em) and (max-width: 60.625em) {
+  .site-content .content-area {
+    margin-top: 7em;
+  }
+}
+@media only screen and (min-width: 0) and (max-width: 30em) {
+  .site-content .content-area {
+    margin-top: 5em;
   }
 }
 
 .site-main {
-  padding-left: 5em;
-  padding-right: 5em;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
-@media only screen and (min-width: 0em) and (max-width: 30em) {
+.site-main p {
+  font-size: 1.25em;
+}
+.site-main h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 1.15em;
+  line-height: 1.55em;
+}
+@media only screen and (min-width: 0em) and (max-width: 64em) {
   .site-main {
     padding: 0;
-    margin-top: 8em;
     width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .site-main p {
+    font-size: 1.25em;
+  }
+  .site-main h2 {
+    margin-bottom: 0.5em;
+  }
+}
+
+.grid {
+  text-align: center;
+  overflow: hidden;
+  clear: both;
+}
+@media only screen and (min-width: 0em) and (max-width: 30em) {
+  .grid {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media only screen and (min-width: 30em) and (max-width: 60.625em) {
+  .grid {
+    width: 100%;
+  }
+}
+
+.grid-item {
+  float: left;
+  width: 30%;
+  margin: 1.5%;
+}
+@media only screen and (min-width: 0em) and (max-width: 30em) {
+  .grid-item {
+    width: 100%;
+    margin-bottom: 1.5em;
+  }
+}
+@media only screen and (min-width: 30em) and (max-width: 70.625em) {
+  .grid-item {
+    width: 45%;
+    margin: 2.5%;
   }
 }
 
 .site-footer {
   margin-bottom: 7em;
+  text-align: center;
 }
 @media only screen and (min-width: 60.625em) {
   .site-footer {
-    margin-left: 25em;
-    padding-left: 5em;
+    margin-top: 5em;
+    margin-bottom: 0em;
+  }
+}
+@media only screen and (min-width: 30em) and (max-width: 60.625em) {
+  .site-footer {
+    margin-top: 5em;
+    margin-bottom: 6em;
+  }
+}
+@media only screen and (min-width: 0) and (max-width: 30em) {
+  .site-footer {
+    margin-top: 5em;
+    margin-bottom: 4em;
   }
 }
 
-.paper, .video, .performative {
-  display: inline-block;
+.cat-description {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
-.paper img, .video img, .performative img {
-  max-width: 100%;
+@media only screen and (min-width: 76.25em) {
+  .cat-description {
+    width: 80%;
+  }
 }
 
 .detail {
@@ -537,22 +909,59 @@ table {
   min-height: 100%;
 }
 
+.back-to, .count {
+  display: inline-block;
+  width: 49%;
+  font-family: 'Cutive', serif;
+}
+
+.back-to {
+  padding-left: 2em;
+}
+@media only screen and (min-width: 0) and (max-width: 30em) {
+  .back-to {
+    padding-left: 0;
+    width: 70%;
+  }
+}
+.back-to a {
+  text-decoration: none;
+}
+
+.count {
+  padding-right: 2em;
+  text-align: right;
+}
+@media only screen and (min-width: 0) and (max-width: 30em) {
+  .count {
+    padding-right: 0;
+    width: 28%;
+  }
+}
+
+p.count {
+  color: #bc1565;
+}
+
+a.back {
+  color: #bc1565;
+}
+
+.back-to:hover i {
+  color: #f959a6;
+}
+
+a.back:visited {
+  color: #bc1565;
+}
+
+a.back:hover {
+  color: #f959a6;
+}
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  border: 1px solid;
-  border-radius: 3px;
-  color: rgba(0, 0, 0, 0.8);
-  font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 1;
-  padding: .6em 1em .4em;
-}
-
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -626,13 +1035,14 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue;
+  cursor: hand;
+  color: #443e0d;
 }
 a:visited {
-  color: purple;
+  color: #443e0d;
 }
 a:hover, a:focus, a:active {
-  color: midnightblue;
+  color: #443e0d;
 }
 a:focus {
   outline: thin dotted;
@@ -646,28 +1056,62 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 .main-navigation {
   clear: both;
-  padding: 0em 0;
+  padding: 2em 2em;
+  font-family: 'Cutive', serif;
+}
+.main-navigation .menu-item {
+  cursor: hand;
 }
 .main-navigation ul {
-  padding-left: 5%;
-  padding-right: 5%;
+  padding: 0em 1em;
   display: none;
   list-style: none;
   margin: 0;
 }
+.main-navigation ul .sub-menu {
+  margin: 0;
+  padding: 0;
+  padding-left: 2em;
+}
 @media only screen and (min-width: 0) and (max-width: 60.625em) {
   .main-navigation {
-    position: fixed;
-    z-index: 10;
-    right: 3em;
-    margin: 2em 0;
+    padding: 0;
+    width: 25%;
+    text-align: right;
   }
 }
 
 /* Small menu. */
+.menu-toggle {
+  position: fixed;
+  right: 1em;
+  top: 0.5em;
+  color: #443e0d;
+  padding: .6em 1em .4em;
+}
+@media only screen and (min-width: 30em) {
+  .menu-toggle {
+    right: 5em;
+    top: 1.25em;
+  }
+}
+
+.menu-toggle:hover {
+  color: #bc1565;
+}
+
+.menu-toggle:after {
+  font-family: 'FontAwesome';
+  content: "\f0c9";
+  font-size: 4em;
+  border: none;
+}
+
 .menu-toggle,
 .main-navigation.toggled ul:first-child {
   display: block;
+  border: none;
+  background: transparent;
 }
 
 @media only screen and (min-width: 60.625em) {
@@ -718,6 +1162,12 @@ a:hover, a:active {
   margin-left: 0.8em;
 }
 
+.menu-main-menu-container ul > li {
+  font-size: 1.25em;
+}
+.menu-main-menu-container ul li li {
+  font-size: 0.85em;
+}
 @media only screen and (min-width: 60.625em) {
   .menu-main-menu-container {
     height: 100%;
@@ -741,7 +1191,7 @@ a:hover, a:active {
 
 .main-navigation .current-menu-item > a,
 .main-navigation .current-menu-ancestor > a {
-  font-weight: 700;
+  color: #f959a6;
 }
 
 .main-navigation .nav-menu > ul > li:first-child,
@@ -757,8 +1207,6 @@ a:hover, a:active {
   color: #707070;
   color: rgba(51, 51, 51, 0.7);
   font-family: "Noto Sans", sans-serif;
-  font-size: 12px;
-  font-size: 1.2rem;
   font-weight: 400;
   line-height: 1.5;
   margin-top: 0.5em;
@@ -776,6 +1224,7 @@ a:hover, a:active {
   box-sizing: content-box;
   content: "";
   color: #c86400;
+  font-size: 1.8em;
   padding: 0;
   position: absolute;
   text-transform: lowercase;
@@ -786,28 +1235,22 @@ a:hover, a:active {
 }
 
 .dropdown-toggle:after {
-  color: #c86400;
+  color: #443e0d;
   content: "\f107";
-  font-size: 24px;
   position: relative;
   top: 0;
   left: 1px;
   width: 42px;
 }
 
-.dropdown-toggle.toggle-on:after {
-  content: "\f106";
+.dropdown-toggle:hover,
+.dropdown-toggle:focus {
+  color: #f959a6;
 }
 
-.language-menu {
-  z-index: 5;
-  width: 100vw;
-}
-@media only screen and (min-width: 0) and (max-width: 60.625em) {
-  .language-menu section {
-    margin: 0;
-    padding: 1em;
-  }
+.dropdown-toggle.toggle-on:after {
+  color: #f959a6;
+  content: "\f106";
 }
 
 /*--------------------------------------------------------------

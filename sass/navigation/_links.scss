@@ -1,4 +1,5 @@
 a {
+	cursor: hand;
 	color: $color__link;
 
 	&:visited {
@@ -7,7 +8,7 @@ a {
 	&:hover,
 	&:focus,
 	&:active {
-		color: $color__link-hover;
+		color: $color__link;
 	}
 	&:focus {
 		outline: thin dotted;

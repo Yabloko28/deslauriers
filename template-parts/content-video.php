@@ -10,8 +10,7 @@
 ?>
 
 
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <?php the_title( '<h2 class="entry-title"></h2>' ); ?>
+	<div class="video" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
         <?php the_content(); ?>
 

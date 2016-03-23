@@ -20,11 +20,11 @@ get_header(); ?>
 			
 			<h2 class="cat-title"><?php single_cat_title(); ?></h2>
 			<div class="cat-description"><?php echo category_description($c); ?></div>
-
+<section class="grid js-isotope" id='isotope-list'>
         <?php }
 		if ( have_posts() ) : 
 			/* Start the Loop */
-		
+
 			while ( have_posts() ) : the_post();
 
 				/*
@@ -54,7 +54,7 @@ get_header(); ?>
 		 <?php $arr = get_posts(); 
           
 		 ?>
-		 
+		</section> 
 <section id="post-<?php the_ID(); ?>"  class="slide-page">
 
 </section><!-- #post-## -->
@@ -65,3 +65,4 @@ get_header(); ?>
 <?php
 get_sidebar();
 get_footer();
+?>

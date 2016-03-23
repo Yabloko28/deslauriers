@@ -13,26 +13,21 @@
 
 	<div class="entry-content">
 		<?php
-			the_content();
+		$bio1 = get_field( "bio" );
+		$bio2 = get_field( "bio2" );
+        $bio3 = get_field( "bio3" );
+        $image = get_field( "bio-image" ); ?>
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'deslauriers' ),
-				'after'  => '</div>',
-			) );
-		?>
+        <p class="bio"><?php echo $bio1; ?></p>
+        <p class="bio2"><?php echo $bio2; ?></p>
+        <p class="bio3"><?php echo $bio3; ?></p>
+
+        <div class="bio-image"><img src="<?php echo $image; ?>"></div>
+        
+        <section class="cv">
+            <h2>CV</h2>
+            <div class="columns"><?php echo the_content(); ?></div>
+        </section>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post */
-					esc_html__( 'Edit %s', 'deslauriers' ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-		?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

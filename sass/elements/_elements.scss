@@ -11,6 +11,8 @@ html {
 body {
 	width: 100vw;
 	background: white; /* Fallback for when there is no custom background color defined. */
+    font-family: 'Domine', serif;
+    font-size: 1.25em;
 }
 
 body.custom-background {
@@ -27,6 +29,11 @@ blockquote, q {
 	}
 }
 
+span {
+	text-decoration: none;
+	display: inline-block;
+}
+
 hr {
 	background-color: $color__background-hr;
 	border: 0;
@@ -41,28 +48,57 @@ img {
 	max-width: 100%; /* Adhere to container width. */
 }
 
+p {
+	font-size: 1.25em;
+	font-weight: 400;
+}
+
+ul {
+	padding: 0;
+	list-style-type: circle;
+}
+
+.fa {
+	padding-right: 1em;
+	color: #bc1565;
+}
+.fa-bars {
+	padding-right: 0;
+	height: 2em;
+}
+
 @import "tables";
 
 .site-header {
 	width: 100vw;
-	background: rgb(255,255,255);
-	// text-align: center;
-	@include break(0em, 60.625em) {
+	background-image: linear-gradient(-180deg, $header-background 0%, #d4f7dc 100%);
+    @include break(0, 30em) {
+        height: 6.5em;
+    }
+	@include break(30em, 60.625em) {
 		height: 8em;
 	}
-	    @include break(60.625em) {
-	    	background-color: $header-background;
+	@include break(60.625em) {
     	    width: $size__site-sidebar;
     	    height: 100%;
         }
 	    position: fixed;
+	    top: 0;
 	    z-index: 2;
 	.site-branding {
-	    padding: 1em 2em;
 	    display: inline-block;
-	    height: 8em;
+	    @include break(0, 30em) {
+            height: 6em;
+            padding: 1em 1em;
+            max-width: 70%;
+	    }
+	    @include break(30em, 60.625em) {
+	        height: 8em;
+	        padding: 1em 4em;
+	    }
 	    @include break(60.625em) {
-	        padding: 2em 2em;
+	        padding: 2em 3em;
+	        width: 100%;
 	    }
 	    .site-title {
 	    	margin: 0;
@@ -70,7 +106,12 @@ img {
 	    	    display: inline-block;
 	    	}
 	    	img {
-	    		height: 2.9em;
+	    		@include break(30em, 60.625em) {
+	    		    height: 2.9em;
+	    		}
+	    		@include break(0, 30em) {
+	    			height: 2.2em;
+	    		}
 	    	}
 	    }
 	}
@@ -85,9 +126,12 @@ img {
 		    	width: 100vw;
 		    	text-align: left;
 		    	position: fixed;
-		    	top: 12.5em;
+		    	top: 8em;
+		    	@include break(0, 30em) {
+		    		top: 6em;
+		    	}
 		    	right: 0;
-		    	background: rgb(200,200,200);
+		    	background: #d4f7dc;
 		    }
 		    .menu-main-menu-container > ul {
 		    		width: 100%;
@@ -98,17 +142,70 @@ img {
 }
 
    .language-menu {
+   	    z-index: 5;
+   	    padding: 2em 2em;
+   	    text-align: center;
 		display: inline-block;
-		width: 45%;
-		
-		// position: relative;
-		@include break(0em, 60.625em) {
-			width: 100vw;
+		.qtranxs_widget {
+			margin-top: 3em;
+				.lang-en {
+					padding-right: 0.8em;
+		    		border-right: 1px $color__text-main solid;
+		    	}
+		}
+		@include break(0, 60.625em) {
+			padding: 0.5em 2em;
+		    background-image: linear-gradient(-180deg, #d4f7dc 0%, $header-background 100%);
+		    .widget {
+		    	width: 50%;
+		    	padding: 0.5em 0;
+		    	@include break(30em, 60.625em) {
+		    		padding: 0.5em 2em;
+		    	}
+		    	@include break(30em, 35em) {
+		    		padding: 0.5em 1em;
+		    	}
+		    }
+		    .qtranxs_widget {
+		    	margin-top: 0;
+		    	text-align: right;
+		    	width: 40%;
+		    }
+		}
+		@include break(0, 30em) {
+			padding: 0em;
+			text-align: center;
+		.qtranxs_widget {
+			margin-left: 1.5em;
+		}
+	}
+		.textwidget div a {
+			width: 4em;
+             margin-left: 3em;
+             @include break(0, 30em) {
+             	margin-left: 1.5em;
+             	padding: 0;
+             }
+		}
+		.textwidget div a:first-child {
+             margin-left: 0;
+             @include break(0, 30em) {
+             	margin-left: 1em;
+             }
+		}
+		@include break(60.625em) {
+		width: $size__site-sidebar;
+		}
+		@include break(0, 60.625em) {
+			section {
+			margin: 0;
+			padding: 1em;
+		}
+			width: 100%;
 			position: fixed;
 			text-align: right;
 			bottom: 0;
 			right: 0;
-			background: white;
 			display: inline-block;
 			text-align: left;
 			section {
@@ -117,45 +214,243 @@ img {
 
 	    }
     }
-
+.video {
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 2em;
+	width: 100%;
+}
+a.next-image {
+	text-decoration: none;
+}
+.bio {
+	margin-top: 2em;
+	@include break(0, 60.625em) {
+		margin-top: 0;
+	}
+}
+.bio, .bio2 {
+	width: 70%;
+	@include break(0, 30em) {
+		width: 100%;
+	}
+	font-size: 1.25em;
+	margin-bottom: 1em;
+}
+.cv {
+	width: 70%;
+	@include break(0, 30em) {
+		width: 100%;
+	}
+	margin-top: 4em;
+	h2 {
+		font-size: 1.45em;
+		border-bottom: 1px $color__text-main solid;
+	}
+	h3 {
+		margin-top: 2.5em;
+        margin-bottom: 1.25em;
+		font-size: 1.25em;
+	}
+	ul {
+		font-size: 1.10em;
+		li {
+			margin-bottom: 1em;
+		}
+	}
+}
+.bio-image {
+    position: fixed;
+    right: 0;
+    bottom:10vh;
+    width: 20%;
+    @include break(0, 60.625em) {
+    	width: 30%;
+    }
+}
+article.hentry {
+	margin-bottom: 0 !important;
+}
+.post {
+	text-align: center;
+	h2.entry-title {
+		font-size: 1.5em;
+		margin-bottom: 0.5em;
+	}
+	img {
+		height: auto;
+		width: 100%;
+		@include break(60.625em) {
+		height: 100vh;
+		width: auto;
+	}
+	}
+}
+	.previous, .next {
+		position: absolute;
+		top: 55vh;
+		width: 2.5em;
+		@include break(0, 30em) {
+			width: 1.5em;
+		}
+		.hover {
+			display: none;
+		}
+	}
+	.previous:hover {
+		.static {
+			display: none;
+		}
+		.hover {
+			display: block;
+		}
+	}
+	.next:hover {
+		.static {
+			display: none;
+		}
+		.hover {
+			display: block;
+		}
+	}
+	.previous {
+		left: $size__site-sidebar + 2em;
+		@include break(0, 60.625em) {
+			left: 0.5em;
+		}
+	}
+	.next {
+		right: 2em;
+		@include break(0, 60.625em) {
+			right: 0.5em;
+		}
+	}
+	.materials, .dimensions, .year {
+		text-align: center;
+		margin-bottom: 0.2em;
+	}
 .welcome{
     text-align: center;
+    img {
+    	height: 90vh;
+    	width: auto;
+    	@include break(30em, 60.625em) {
+    		margin-top: 8em;
+    		width: 100%;
+    		height: auto;
+    	}
+    	@include break(0em, 30em) {
+    		margin-top: 5em;
+    		width: 100%;
+    		height: auto;
+    	}
+    }
 }
 
 .site-content {
 	@include break(60.625em) {
 	padding: 0;
 	padding-left: $size__site-sidebar;
+	.content-area {
+		margin-top: 0;
+	}
     }
+    @include break(30em, 60.625em) {
+	     .content-area {
+	     	margin-top: 7em;
+	     }
+	}
+    @include break(0, 30em) {
+	     .content-area {
+	     	margin-top: 5em;
+	     }
+	}
     width: 100%;
 }
 .site-main {
-	padding-left: 5em;
-	padding-right: 5em;
-	@include break(0em, 30em) {
-		padding: 0;
-		margin-top: 8em;
-		width: 90%;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	p {
+		font-size: 1.25em;
 	}
+	h2 {
+		text-align: center;
+		font-size: 2em;
+		margin-top: 0;
+		margin-bottom: 1.15em;
+		line-height: 1.55em;
+	}
+	@include break(0em, 64em) {
+	    p {
+		font-size: 1.25em;
+	        }
+		h2 {
+			margin-bottom: 0.5em;
+
+		}
+		padding: 0;
+		// margin: 0;
+
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+		// margin-left: auto;
+		// margin-right: auto;
+		// width: 90%;
+}
+.grid {
+	text-align: center;
+	overflow: hidden;
+	clear: both;
+	@include break(0em, 30em) {
+  	width: 90%;
+  	margin-left: auto;
+  	margin-right: auto;
+  }
+  @include break(30em, 60.625em) {
+  	width: 100%;
+  }
+}
+.grid-item {
+  float: left;
+  width: 30%;
+  margin: 1.5%;
+  @include break(0em, 30em) {
+  	width: 100%;
+  	margin-bottom: 1.5em;
+  }
+  @include break(30em, 70.625em) {
+  	width: 45%;
+  	margin: 2.5%;
+  }
 }
 
 .site-footer {
 	margin-bottom: 7em;
+	text-align: center;
 	@include break(60.625em) {
-	    margin-left: 25em;
-	    padding-left: 5em;
+	    margin-top: 5em;
+	    margin-bottom: 0em;
+    }
+    @include break(30em, 60.625em) {
+    	margin-top: 5em;
+    	margin-bottom: 6em;
+    }
+    @include break(0, 30em) {
+    	margin-top: 5em;
+    	margin-bottom: 4em;
     }
 }
 
-.paper, .video, .performative {
-	display: inline-block;
-		img {
-		    max-width: 100%;
+.cat-description {
+	width: 90%;
+	@include break(76.25em) {
+         width: 80%;
 	}
-}
-
-.cv-bio, .contact {
-
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .detail {
@@ -164,4 +459,49 @@ img {
 	background: rgb(100, 100, 100);
 	width: 100%;
 	min-height: 100%;
+}
+
+.back-to, .count {
+	display: inline-block;
+	width: 49%;
+    font-family: 'Cutive', serif;
+}
+.back-to {
+	padding-left: 2em;
+	@include break(0, 30em) {
+		padding-left: 0;
+		width: 70%;
+	}
+	a {
+		text-decoration: none;
+	}
+}
+// .back-to:before {
+// 	font-family: 'FontAwesome';
+// 	content: "\f060 ";
+// }
+.count {
+	padding-right: 2em;
+	text-align: right;
+	@include break(0, 30em) {
+		padding-right: 0;
+		width: 28%;
+	}
+}
+p.count {
+	color: #bc1565;
+}
+a.back {
+	color: #bc1565;
+}
+.back-to:hover {
+	i {
+		color: $color__link-hover;
+	}
+}
+a.back:visited {
+	color: #bc1565;
+}
+a.back:hover {
+	color: $color__link-hover;
 }
