@@ -11,7 +11,8 @@ html {
 body {
 	width: 100vw;
 	background: white; /* Fallback for when there is no custom background color defined. */
-    font-family: 'Domine', serif;
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
     font-size: 1.25em;
 }
 
@@ -50,7 +51,8 @@ img {
 
 p {
 	font-size: 1.25em;
-	font-weight: 400;
+	font-weight: 300;
+	line-height: 2em;
 }
 
 ul {
@@ -320,11 +322,11 @@ article.hentry {
 	margin-left: auto;
 	margin-right: auto;
 	p {
-		font-size: 1.25em;
+		font-size: 1.05em;
 	}
 	h2 {
 		text-align: center;
-		font-size: 2em;
+		font-size: 1.5em;
 		margin-top: 0;
 		margin-bottom: 1.15em;
 		line-height: 1.55em;
@@ -390,7 +392,7 @@ article.hentry {
     }
     a {
     	text-decoration: none;
-    	font-weight: 700;
+    	font-weight: 400;
     }
 }
 
@@ -414,9 +416,10 @@ article.hentry {
 	min-height: 100%;
 }
 
-.back-to, .count {
+p.back-to, p.count {
+	font-size: 1.25em;
 	display: inline-block;
-    font-family: 'Cutive', serif;
+    font-family: 'Josefin Slab', serif;
 }
 .back-to {
 	width: 70%;

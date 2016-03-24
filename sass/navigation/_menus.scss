@@ -1,7 +1,7 @@
 .main-navigation {
 	clear: both;
     padding: 2em 2em;
-    font-family: 'Cutive', serif;
+    font-family: 'Josefin Slab', serif;
     .menu-item {
     	cursor: pointer;
     }
@@ -272,4 +272,7 @@
 			}
 
 	    }
+}
+.textwidget img {
+    opacity: 0.75;
 }
